@@ -1,0 +1,9 @@
+name: Context
+on: push
+
+jobs:
+  functions:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: test
+        run: echo ${{ contains( 'hello', 'll' ) }}
