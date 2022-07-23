@@ -20,13 +20,13 @@ jobs:
     steps:
       - name: Dump Github Context     # this step will fail for testing 
         env: 
-          GITHUB_CONTEXT: ${{ joJson(github) }}
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run:
           echho "$GITHUB_CONTEXT"     # typo in 'echho'
       - name: Dump Job Context
         if: failure()                 # runs only if previous step fails.
         env: 
-          JOB_CONTEXT: ${{ joJson(job) }}
+          JOB_CONTEXT: ${{ toJson(job) }}
         run:
           echo "$JOB_CONTEXT"
       - name: Dump runner context
