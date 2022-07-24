@@ -7,12 +7,12 @@ jobs:
       matrix:
         # os: [macos-latest, ubuntu-latest, windows-latest]
         my_node_versions: [6, 8, 10]
-    runs-on: '${{ matrix.os }}''
+    runs-on: '${{ matrix.os }}'
     steps:
       - name: Log node version 
         run: node -v 
       - uses: actions/setup-node@v1
         with:
-          node-version: '${{ matrix.my_node_versions }}''
+          node-version: '${{ matrix.my_node_versions }}'
       - name: Log node version
         run: node -v
